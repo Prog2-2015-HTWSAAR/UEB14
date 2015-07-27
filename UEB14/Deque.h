@@ -6,31 +6,29 @@ using namespace std;
 class Deque {
 public:
 	Deque();
-	Deque(int a); //WTF IS THIS SHIT Deque(int = 100);
+	Deque(int maxsize = 100);
 	~Deque() {
 		delete data;
-	} //Stilbruch
-	  /*string pop_front() const;
-	  void push_front(string);*/
-	string pop_back();//const wtf
+	}
+	const string pop_front();
+	void push_front(string s);
+	const string pop_back();
 	void push_back(string);
-	bool empty() { 
-		return size <= 0; 
-	}//int empty() { return size <= 0;  } BULLSHIT
+	bool isEmpty(){
+		return size <= 0;
+	}
 	bool full() { 
-		return size >= maxsize; 
-	}//int full() { return size >= maxsize;  } BULLSHIT
-	int get_size(){ 
+		return size >= maxSize; 
+	}
+	int get_size() const {
 		return size; 
-	} //int get_size() { return size; } BULLSHIT
-
-	void youWantThisJunk();
+	}
+	friend ostream& operator<<(ostream& o, const Deque d);
 	string toString() const;
 
 private:
 	string* data;
 
-	void wtfIsThisBullShit(Deque& d1, Deque& d2);
 	int size; // tatsaechliche Groesse
-	int maxsize; // maximale Groesse //const
+	int maxSize; // maximale Groesse //const
 };
