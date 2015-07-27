@@ -74,5 +74,4 @@ int main() {
 	cout << d2.pop_front() << endl; // Dies
 	cout << d2.pop_back() << endl; // Klausur
 	cout << d2; // ist eine
-	cout << d2;
 }
