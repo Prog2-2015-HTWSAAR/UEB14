@@ -27,7 +27,7 @@ public:
 	string toString() const;
 
 private:
-	string* data;
+	string** data;
 
 	int size; // tatsaechliche Groesse
 	int maxSize; // maximale Groesse //const
