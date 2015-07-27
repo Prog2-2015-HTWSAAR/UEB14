@@ -1,0 +1,69 @@
+/*
+ *  Deque mit vielen Fehlern und Mängeln
+ *  DequeF.cpp
+ *
+ *  Created on: 14.07.2012
+ *      Author: folz
+ */
+// Deque falsche Version
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Deque {
+public:
+	Deque(int = 100);
+	~Deque() {
+		delete data;
+	}
+	string pop_front() const;
+	void push_front(string);
+	string pop_back() const;
+	void push_back(string);
+	bool empty() {
+		return size <= 0;
+	}
+	bool full() {
+		return size >= maxsize;
+	}
+	int get_size() {
+		return size;
+	}
+private:
+	string* data;
+	int size; // tatsaechliche Groesse
+	const int maxsize; // maximale Groesse
+};
+
+Deque::Deque(int n) {
+	maxsize = n;
+	data = new string[maxsize];
+}
+
+string Deque::pop_back() const {
+	return data[--size];
+}
+
+void Deque::push_back(string s) {
+	data[size++] = s;
+}
+
+ostream& operator<<(ostream& o, const Deque d) {
+	for (int i = 0; i < d.get_size(); ++i)
+		cout << data[i] << '\t';
+	return cout << endl;
+}
+
+int main() {
+	Deque d1(10), d2(d1);
+	d1.push_back("eine");
+	d1.push_back("Klausur");
+	d1.push_front("ist");
+	d1.push_front("Dies");
+	d2 = d1;
+	cout << d2; // Dies ist eine Klausur
+	cout << d2.pop_front() << endl; // Dies
+	cout << d2.pop_back() << endl; // Klausur
+	cout << d2; // ist eine
+}
