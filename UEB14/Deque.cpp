@@ -1,8 +1,8 @@
-/*
- * Deque.cpp
+/**
+ * @file Deque.cpp
  *
- *  Created on: 28.07.2015
- *      Author: Simon
+ * @date 28.07.2015
+ * @author Simon Bastian & Andreas Schreiner
  */
 
 #include "Deque.h"
@@ -59,7 +59,7 @@ void Deque::push_back(string s) {
 	}
 	data[size++] = s;
 }
-ostream& operator<<(ostream& o, const Deque d) {
+ostream& operator<<(ostream& o, const Deque& d) {
 	o << d.toString();
 	return o;
 }
