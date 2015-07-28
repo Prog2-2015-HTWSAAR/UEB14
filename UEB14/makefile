@@ -11,9 +11,9 @@ build11:
 	g++ -c -Wall -pedantic *.cpp -std=c++11
 	g++ -o ueb14 *.o
 doc: 
-	/export/home_14/andschreiner/doxygen/bin/doxygen doxyfile
+	/Applications/Doxygen.app/Contents/Resources/doxygen
 docmac: 
-	/Applications/Doxygen/doxygen doxyfile
+	/Applications/Doxygen.app/Contents/Resources/doxygen
 rebuild: clean all
 
 testbuild: 
