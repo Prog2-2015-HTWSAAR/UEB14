@@ -1,5 +1,11 @@
+/*
+ * Deque.cpp
+ *
+ *  Created on: 28.07.2015
+ *      Author: Simon
+ */
+
 #include "Deque.h"
-#include <queue>
 using namespace std;
 
 Deque::Deque() {
@@ -74,4 +80,4 @@ int main() {
 	cout << d2.pop_front() << endl; // Dies
 	cout << d2.pop_back() << endl; // Klausur
 	cout << d2; // ist eine
-}
+}

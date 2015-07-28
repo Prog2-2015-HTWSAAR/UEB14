@@ -1,6 +1,15 @@
+/*
+ * Deque.h
+ *
+ *  Created on: 28.07.2015
+ *      Author: Simon
+ */
+
+#ifndef DEQUE_H_
+#define DEQUE_H_
 #include <iostream>
 #include <string>
-#include <sstream>    
+#include <sstream>
 
 using namespace std;
 class Deque {
@@ -17,18 +26,19 @@ public:
 	bool isEmpty(){
 		return size <= 0;
 	}
-	bool full() { 
-		return size >= maxSize; 
+	bool full() {
+		return size >= maxSize;
 	}
 	int get_size() const {
-		return size; 
+		return size;
 	}
 	friend ostream& operator<<(ostream& o, const Deque d);
 	string toString() const;
 
 private:
-	string** data;
+	string* data;
 
 	int size; // tatsaechliche Groesse
 	int maxSize; // maximale Groesse //const
 };
+#endif /* DEQUE_H_ */
