@@ -16,7 +16,7 @@ class Deque {
 public:
 	Deque();
 	Deque(int maxsize = 100);
-	~Deque() {}
+	virtual ~Deque();
 	const string pop_front();
 	void push_front(string s);
 	const string pop_back();

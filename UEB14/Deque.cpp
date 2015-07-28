@@ -19,7 +19,9 @@ Deque::Deque(int maxSize) {
 	size = 0;
 	data = new string[maxSize];
 }
-
+Deque::~Deque(){
+	// Nothing to do here
+}
 const string Deque::pop_front(){
 	string* erg;
 	if(isEmpty()){
